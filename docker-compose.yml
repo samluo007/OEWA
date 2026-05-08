@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  # 后端服务
+  backend:
+    build:
+      context: ./OEWA-backend
+      dockerfile: Dockerfile
+    container_name: oewa-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://oewa:oewa_password@postgres:5432/oewa_db
+      - REDIS_URL=redis://redis:6379/0
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - oewa-network
+    restart: unless-stopped
+
+  # 前端服务
+  frontend:
+    build:
+      context: ./OEWA-frontend
+      dockerfile: Dockerfile
+    container_name: oewa-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - oewa-network
+    restart: unless-stopped
+
+  # PostgreSQL 数据库（可选，生产环境建议使用云数据库）
+  postgres:
+    image: postgres:15-alpine
+    container_name: oewa-postgres
+    environment:
+      - POSTGRES_USER=oewa
+      - POSTGRES_PASSWORD=oewa_password
+      - POSTGRES_DB=oewa_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - oewa-network
+    restart: unless-stopped
+
+  # Redis 缓存（可选，生产环境建议使用云Redis）
+  redis:
+    image: redis:7-alpine
+    container_name: oewa-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - oewa-network
+    restart: unless-stopped
+
+networks:
+  oewa-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:

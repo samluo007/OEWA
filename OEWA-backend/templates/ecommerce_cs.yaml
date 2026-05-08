@@ -1,0 +1,67 @@
+nodes:
+  - id: node_1
+    type: llm
+    position:
+      x: 100
+      y: 100
+    data:
+      label: 意图识别
+      config:
+        model: gpt-4o
+        prompt: 分析用户问题意图：{user_query}
+  - id: node_2
+    type: condition
+    position:
+      x: 300
+      y: 100
+    data:
+      label: 判断问题类型
+      config:
+        condition: "intent == '售后'"
+  - id: node_3
+    type: llm
+    position:
+      x: 500
+      y: 50
+    data:
+      label: 售后回答
+      config:
+        model: gpt-4o
+        prompt: 生成售后回答：{issue}
+  - id: node_4
+    type: llm
+    position:
+      x: 500
+      y: 150
+    data:
+      label: 售前回答
+      config:
+        model: gpt-4o
+        prompt: 生成售前回答：{query}
+  - id: node_5
+    type: code
+    position:
+      x: 700
+      y: 100
+    data:
+      label: 格式化输出
+      config:
+        code: "print(response)"
+edges:
+  - id: edge_1
+    source: node_1
+    target: node_2
+  - id: edge_2
+    source: node_2
+    target: node_3
+    condition: true
+  - id: edge_3
+    source: node_2
+    target: node_4
+    condition: false
+  - id: edge_4
+    source: node_3
+    target: node_5
+  - id: edge_5
+    source: node_4
+    target: node_5

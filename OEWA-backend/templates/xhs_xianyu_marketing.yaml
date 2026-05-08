@@ -1,0 +1,144 @@
+name: 小红书咸鱼营销自动化
+description: 自动生成小红书种草内容，同步发布到闲鱼，实现流量闭环
+industry: ecommerce
+version: 1.0
+nodes:
+  - id: content_gen
+    type: llm
+    name: 内容生成
+    config:
+      prompt: "为产品{{product_name}}生成小红书种草文案，包含：吸引人的标题、正文（带emoji）、热门标签#。风格：真实体验分享，不硬广。"
+      model: "qclaw/pool-hy3-preview"
+    inputs:
+      product_name: "{{input.product_name}}"
+      features: "{{input.features}}"
+    outputs:
+      - xhs_content
+      - title
+      - tags
+
+  - id: image_gen
+    type: code
+    name: 图片处理
+    config:
+      code: |
+        # 模拟图片生成/处理
+        # 实际可接入图片生成API
+        return {"images": ["product_cover.jpg", "detail_1.jpg"], "status": "success"}
+    inputs:
+      content: "{{content_gen.xhs_content}}"
+    outputs:
+      - images
+
+  - id: xhs_publish
+    type: http
+    name: 小红书发布
+    config:
+      url: "https://edith.xiaohongshu.com/api/post/publish"
+      method: "POST"
+      headers:
+        Authorization: "Bearer {{xhs_token}}"
+        Content-Type: "application/json"
+      body: |
+        {
+          "title": "{{content_gen.title}}",
+          "content": "{{content_gen.xhs_content}}",
+          "images": {{image_gen.images}},
+          "tags": {{content_gen.tags}}
+        }
+    inputs:
+      xhs_token: "{{input.xhs_token}}"
+    outputs:
+      - post_id
+      - publish_status
+
+  - id: convert_strategy
+    type: llm
+    name: 转化策略生成
+    config:
+      prompt: "基于小红书内容：{{content_gen.xhs_content}}，生成闲鱼商品描述。要求：突出性价比、二手成色、包邮等卖点。商品名：{{product_name}}"
+      model: "qclaw/pool-hy3-preview"
+    inputs:
+      xhs_content: "{{content_gen.xhs_content}}"
+      product_name: "{{input.product_name}}"
+    outputs:
+      - xianyu_title
+      - xianyu_desc
+
+  - id: xianyu_publish
+    type: http
+    name: 闲鱼发布
+    config:
+      url: "https://api.goofish.com/api/publish"
+      method: "POST"
+      headers:
+        Authorization: "Bearer {{xianyu_token}}"
+        Content-Type: "application/json"
+      body: |
+        {
+          "title": "{{convert_strategy.xianyu_title}}",
+          "description": "{{convert_strategy.xianyu_desc}}",
+          "price": "{{input.price}}",
+          "images": {{image_gen.images}}
+        }
+    inputs:
+      xianyu_token: "{{input.xianyu_token}}"
+      price: "{{input.price}}"
+    outputs:
+      - item_id
+      - publish_status
+
+  - id: monitor
+    type: condition
+    name: 结果监控
+    config:
+      condition: "{{xhs_publish.publish_status == 'success' and xianyu_publish.publish_status == 'success'}}"
+    inputs:
+      xhs_status: "{{xhs_publish.publish_status}}"
+      xianyu_status: "{{xianyu_publish.publish_status}}"
+    outputs:
+      - success
+      - failure
+
+edges:
+  - source: content_gen
+    target: image_gen
+  - source: content_gen
+    target: xhs_publish
+  - source: content_gen
+    target: convert_strategy
+  - source: image_gen
+    target: xhs_publish
+  - source: image_gen
+    target: xianyu_publish
+  - source: convert_strategy
+    target: xianyu_publish
+  - source: xhs_publish
+    target: monitor
+  - source: xianyu_publish
+    target: monitor
+
+input_schema:
+  product_name:
+    type: string
+    description: 产品名称
+  features:
+    type: string
+    description: 产品特点
+  price:
+    type: number
+    description: 闲鱼售价
+  xhs_token:
+    type: string
+    description: 小红书API Token
+  xianyu_token:
+    type: string
+    description: 闲鱼API Token
+
+output_schema:
+  xhs_post_id:
+    type: string
+  xianyu_item_id:
+    type: string
+  status:
+    type: string

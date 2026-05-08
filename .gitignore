@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.venv/
+
+# Node
+node_modules/
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+.env
+*.local
+dist/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Large archives (push separately)
+*.zip
+*.tar.gz
+!OEWA-v1.0-commercial.zip
