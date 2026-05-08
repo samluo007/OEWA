@@ -1,0 +1,93 @@
+nodes:
+  - id: node_1
+    type: http
+    position:
+      x: 100
+      y: 200
+    data:
+      label: 获取候选人列表
+      config:
+        url: https://api.example.com/linkedin/candidates?title=产品经理
+        method: GET
+  - id: node_2
+    type: llm
+    position:
+      x: 300
+      y: 200
+    data:
+      label: 生成个性化开场白
+      config:
+        model: gpt-4o
+        prompt: "根据候选人背景和目标职位，生成3条个性化的LinkedIn打招呼消息：\n\n候选人背景：{candidate_background}\n目标职位：{target_role}\n公司信息：{company_info}\n\n要求：每条消息不超过50字，有共鸣点，避免太商业化。"
+  - id: node_3
+    type: llm
+    position:
+      x: 500
+      y: 200
+    data:
+      label: 生成跟进邮件
+      config:
+        model: gpt-4o
+        prompt: "为首封未回复的候选人撰写跟进邮件：\n1. 简短提醒（不超过3句话）\n2. 新的价值点\n3. 明确的CTA\n语气：专业但不卑微"
+  - id: node_4
+    type: condition
+    position:
+      x: 700
+      y: 200
+    data:
+      label: 响应率 > 30%？
+      config:
+        condition: "response_rate > 0.3"
+  - id: node_5
+    type: llm
+    position:
+      x: 900
+      y: 120
+    data:
+      label: 生成面试邀请
+      config:
+        model: gpt-4o
+        prompt: "生成专业的面试邀请，包含：\n1. 职位确认\n2. 面试时间（附日历链接格式）\n3. 面试流程说明\n4. 需要准备的材料清单"
+  - id: node_6
+    type: llm
+    position:
+      x: 900
+      y: 280
+    data:
+      label: 优化话术
+      config:
+        model: gpt-4o
+        prompt: "分析本次外联活动的响应率，提供话术优化建议：\n原始消息：{original_message}\n响应率：{response_rate}\n\n给出3条具体的改进建议。"
+  - id: node_7
+    type: code
+    position:
+      x: 1100
+      y: 200
+    data:
+      label: 更新候选人状态
+      config:
+        code: "def update_crm_status(candidates, statuses):\n    for c, s in zip(candidates, statuses):\n        c['status'] = s\n        c['last_contact'] = datetime.now().isoformat()\n    return candidates"
+edges:
+  - id: edge_1
+    source: node_1
+    target: node_2
+  - id: edge_2
+    source: node_2
+    target: node_3
+  - id: edge_3
+    source: node_3
+    target: node_4
+  - id: edge_4
+    source: node_4
+    target: node_5
+    condition: true
+  - id: edge_5
+    source: node_4
+    target: node_6
+    condition: false
+  - id: edge_6
+    source: node_5
+    target: node_7
+  - id: edge_7
+    source: node_6
+    target: node_7

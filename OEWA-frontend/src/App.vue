@@ -99,7 +99,7 @@ export default {
     const showCreateModal = ref(false);
     const newWorkflow = ref({ name: '', description: '', industry: '' });
 
-    const API_BASE = 'http://localhost:8000/api';
+    const API_BASE = 'http://localhost:8001/api';
 
     const loadWorkflows = async () => {
       loading.value = true;
