@@ -1,0 +1,35 @@
+﻿name: CI
+
+on:
+  push:
+    branches: [clean, main]
+  pull_request:
+    branches: [clean, main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - run: pip install -r OEWA-backend/requirements.txt
+      - name: Lint Python
+        run: python -m py_compile OEWA-backend/main.py
+
+  api-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - run: pip install -r OEWA-backend/requirements.txt
+      - name: API Smoke Test
+        run: |
+          cd OEWA-backend
+          python main.py &
+          sleep 4
+          curl -s http://localhost:8001/templates | grep -q templates
+          curl -s http://localhost:8001/workflows | grep -q workflows
