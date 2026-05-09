@@ -1,110 +1,54 @@
-# OEWA Contributing Guide
+﻿# Contributing to OEWA
 
-Thank you for your interest in contributing to OEWA!
+OEWA = OpenClaw Enterprise Workflow Automation
 
-## How to Contribute
+AI Agent workflow automation platform for recruiters and RPO companies. Configure workflows with YAML, run with zero code.
 
-### 1. Fork the Repository
-Click the "Fork" button on the GitHub page to create your own copy of the repository.
+## Ways to Contribute
 
-### 2. Clone Your Fork
-```bash
-git clone https://github.com/YOUR_USERNAME/oewa.git
-cd oewa
-```
+### ⭐ Star the Repository
+Simplest way to support OEWA!
 
-### 3. Create a Feature Branch
-```bash
-git checkout -b feature/your-feature-name
-```
+### 🐛 Report Bugs
+Create a [GitHub Issue](https://github.com/samluo007/OEWA/issues) with label ug.
 
-### 4. Make Your Changes
-- Write clean, well-documented code
-- Follow existing code style
-- Add tests for new features
-- Update documentation as needed
+### 💡 Suggest Features
+Comment on [Issue #2](https://github.com/samluo007/OEWA/issues/2) or create a new issue with label enhancement.
 
-### 5. Commit Your Changes
-```bash
-git commit -m "Add: your feature description"
-```
+### 📝 Contribute Workflow Templates
+Core of OEWA is YAML workflow templates in OEWA-backend/templates/. Contributions welcome!
 
-### 6. Push to Your Fork
-```bash
-git push origin feature/your-feature-name
-```
-
-### 7. Create a Pull Request
-- Go to the original repository
-- Click "New Pull Request"
-- Select your branch
-- Describe your changes in detail
-
-## Contribution Types
-
-### 🐛 Bug Reports
-- Use GitHub Issues
-- Include steps to reproduce
-- Include expected vs actual behavior
-- Include environment details
-
-### 💡 Feature Requests
-- Use GitHub Discussions
-- Describe the use case
-- Explain expected behavior
-- Provide code examples (optional)
-
-### 📖 Documentation
-- Fix typos and improve clarity
-- Add examples and tutorials
-- Translate to other languages
-
-### 🔧 Code Contributions
-- Follow the code style guide
-- Write unit tests
-- Ensure all tests pass
-- Update relevant documentation
+### 🔧 Fix Code
+1. Fork the repo
+2. Create branch: git checkout -b fix/your-fix-name
+3. Commit: git commit -m 'fix: ...'
+4. Push: git push origin fix/your-fix-name
+5. Open Pull Request
 
 ## Development Setup
 
-### Backend
-```bash
-cd OEWA-backend
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+\\\ash
+git clone https://github.com/samluo007/OEWA.git
+cd OEWA/OEWA-backend
 pip install -r requirements.txt
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
+python main.py
+# Visit http://localhost:8001
+\\\
 
-### Frontend
-```bash
-cd OEWA-frontend
-npm install
-npm run dev
-```
+## Project Structure
 
-### Running Tests
-```bash
-# Backend tests
-cd OEWA-backend
-pytest
+\\\
+OEWA/
+├── OEWA-backend/       # FastAPI backend
+│   ├── main.py         # Entry point
+│   ├── executor.py     # Workflow engine
+│   └── templates/      # YAML workflow templates
+│       ├── recruitment.yaml
+│       └── recruiter_outreach.yaml
+├── OEWA-frontend/      # Vue frontend
+└── OEWA-docs/          # Documentation
+\\\
 
-# Frontend tests
-cd OEWA-frontend
-npm test
-```
+## License
 
-## Code Style
-
-- Python: Follow PEP 8
-- JavaScript/Vue: Follow ESLint config
-- Commit messages: Use semantic versioning
-
-## Questions?
-
-- GitHub Discussions: https://github.com/oewa/oewa/discussions
-- Email: support@oewa.com
-
----
-
-Thank you for contributing to OEWA! 🚀
+MIT License
