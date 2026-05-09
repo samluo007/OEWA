@@ -1,239 +1,137 @@
-# OEWA Launch Pack — 完整可执行版
-> 生成时间：2026-05-09 16:42 | 状态：**直接复制发出**
+﻿# OEWA Launch Pack - 完整可执行版
+> 生成时间：2026-05-09 19:22（修复版）
 
----
+## 一句话价值主张
+OEWA = AI Agent 工作流自动化平台，专注猎头/RPO场景。零代码、YAML配置，开源免费。
+线上演示：https://samluo007.github.io/OEWA | GitHub：https://github.com/samluo007/OEWA
 
-## 一、LinkedIn 英文版（国际猎人圈）
+## LinkedIn 英文版（国际猎头圈）
 
-```
-🔧 I built a tool for recruiters — zero code required.
+标题：Built an Open-Source AI Agent Workflow Engine for Recruiters - Zero Code Required
 
-Most AI Agent platforms (CrewAI, LangFlow) are built for developers.
-But what if you're a recruiter who wants to automate hiring workflows — without writing a single line of code?
-
-That's why I built OEWA — open-source AI Agent Workflow Automation, built specifically for recruiting and RPO.
+正文：
+After 21 hours of hacking, we finally shipped OEWA -- an open-source AI workflow automation platform designed specifically for recruiters and RPO firms.
 
 What it does:
-▸ Drop in a JD → automatically parse job requirements
-▸ Match candidates → generate personalized outreach emails
-▸ Schedule interviews → auto-send calendar invites
+- Connect your ATS/CRM workflow with AI Agents
+- Auto-generate personalized outreach emails at scale
+- Screen candidates and schedule interviews automatically
+- Fully configurable via YAML -- no coding required
 
-It's YAML-config based. Pick a template, fill in your inputs, run it.
+The recruitment industry loses 40%+ of productive hours to repetitive admin tasks. OEWA automates those workflows so headhunters can focus on what matters: building relationships and placing candidates.
 
 Live demo: https://samluo007.github.io/OEWA
 GitHub: https://github.com/samluo007/OEWA
+MIT License -- free to use, fork, and customize.
 
-If you're in recruiting, RPO, or HR tech — I'd love your feedback.
-Drop a comment: what's the most time-consuming part of your recruiting process?
-```
+Would love feedback from fellow recruiters and HR tech builders. What workflows do you wish were automated?
 
-**配图**：截OEWA工作流界面（节点图），标题「AI Workflow for Recruiters — Zero Code」
+#AI #Recruitment #RPO #HRTech #Automation #OpenSource #Headhunting
 
----
+## LinkedIn 中文版
 
-## 二、LinkedIn 中文版（国内HR/猎头圈）
+标题：21小时肝了一个开源工具，把猎头最烦的重复工作全部自动化了
 
-```
-🔧 我给猎头做了个工具，零代码，GitHub开源。
-
-市面上AI Agent平台多是给开发者用的。
-但如果你不懂代码，还想把招聘流程自动化呢？
-
-这就是我做了 OEWA 的原因——专注猎头/RPO场景的AI工作流自动化平台。
-
+正文：
+做猎头的都知道，每天光发邮件、筛简历、安排面试这些杂活，就能吃掉你40%的时间。
+我们刚开源了OEWA——猎头工作流自动化平台，用YAML配置就能跑AI Agent工作流，不用写一行代码。
 核心功能：
-▸ JD丢进去 → 自动解析职位需求
-▸ 匹配候选人 → 生成个性化外联邮件
-▸ 安排面试 → 自动发送日历邀请
+- 自动生成个性化外联邮件（批量）
+- JD解析 + 候选人智能匹配
+- 面试安排自动化
+- 支持6大行业模板（电商、猎头、营销等）
+GitHub完全开源，MIT协议，免费用。
+线上演示（不用安装，直接看）：https://samluo007.github.io/OEWA
+有在做猎头或RPO的同行吗？想听听你们最想自动化哪些环节？
+#猎头 #招聘自动化 #RPO #AI工具 #开源
 
-YAML配置，不用写代码，选模板、填输入、跑起来。
+## 脉脉 版本A（成果展示型）
+正文：
+刚开源了一个专门给猎头用的AI工作流自动化工具。
+以前帮客户招人，光整理JD、对简历、发邮件这些重复动作，每次要花好几小时。现在用OEWA，YAML配一下，AI自动帮你跑完整条招聘流程。
+GitHub开源，MIT协议，免费用：https://github.com/samluo007/OEWA
+线上演示直接看效果：https://samluo007.github.io/OEWA
+正在招募内测用户，有兴趣的猎头/RPO从业者可以直接去GitHub提Issue或者评论，我来帮你搭专属工作流。
+#猎头 #招聘 #RPO #AI #自动化
 
-🔗 在线演示：https://samluo007.github.io/OEWA
-📂 开源地址：https://github.com/samluo007/OEWA
+## 脉脉 版本B（痛点共鸣型）
+正文：
+有没有人跟我一样，每天花大量时间在重复的招聘流程上？
+发外联邮件、整理候选人信息、跟进面试反馈……全是重复劳动，纯粹消耗。
+最近做了一个开源工具OEWA，专门解决这个：把猎头/RPO的日常工作流自动化，YAML配置，零代码，开源免费。
+不用安装，直接看演示：https://samluo007.github.io/OEWA
+GitHub：https://github.com/samluo007/OEWA
+感兴趣的话，去GitHub Star一下也算支持！也欢迎提需求，我来帮你定制。
+#招聘 #猎头 #效率工具 #AI
 
-猎头朋友们、RPO从业者、HR科技创业者，欢迎来聊！
-评论区告诉我：你们招聘流程中哪个环节最费时间？
-```
+## Demo 视频拍摄指南（60秒）
 
----
+工具：Win+G 录屏（Windows自带）
 
-## 三、脉脉版（中文精准招聘圈）
+镜头顺序：
+1. [0-5秒] 痛点开场 - 画外音：「每天花3小时发外联邮件？OEWA帮你自动化」
+2. [5-15秒] 演示YAML配置 - 屏幕：打开VSCode，展示recruiter_outreach.yaml节点连线 - 画外音：「YAML配置工作流，不用写一行代码」
+3. [15-25秒] 演示AI Agent执行 - 屏幕：展示候选人生成结果 + 邮件草稿 - 画外音：「AI自动生成个性化邮件，支持批量发送」
+4. [25-35秒] 展示行业模板库 - 屏幕：API /templates返回6个模板 - 画外音：「6大行业模板，开箱即用」
+5. [35-45秒] 演示GitHub Pages线上效果 - 屏幕：浏览器打开 https://samluo007.github.io/OEWA - 画外音：「线上演示不用安装，直接体验」
+6. [45-60秒] 收尾CTA - 画外音：「GitHub搜OEWA，开源免费，欢迎Star和贡献」
 
-**版本A — 痛点共鸣型：**
-```
-【内测邀请】做了一个招聘工作流自动化工具
+发布平台：微信视频号 / 抖音 / B站
 
-最近做了个项目，叫 OEWA，专门解决猎头和RPO公司的重复劳动问题。
+## 猎头冷外联邮件模板 x 3
 
-你们每天是不是都在做这些：
-• JD发出去，简历堆成山，一个个筛
-• 联系候选人，邮件要一篇篇写，还不知道写得好不好
-• 面试安排，全靠人工确认，经常漏
+### 模板A：猎头/RPO 专业外联
+主题：帮[客户公司]物色[职位]，您的背景高度匹配
 
-我把这些环节全部做成工作流模板，零代码，配置即用。
+您好 [候选人姓名]，
+我是 [你的名字]，专注 [行业/职能] 领域的猎头顾问。
+目前正在帮一家 [公司描述] 招聘 [职位名称] 一职，在筛选候选人时，您的背景引起了我的注意。
+我对您的经验特别感兴趣，因为您在 [关键经历/技能] 方面的积累，与我们客户的需求高度匹配。
+如您感兴趣，我可以花5分钟详细介绍这个机会。您目前有在看新的职业机会吗？
+期待您的回复！
+[你的名字] | [公司名] | [手机号] | [邮箱]
 
-已上线：
-1. 猎头-人才筛选（JD → 候选人匹配 → 面试安排）
-2. 招聘外联自动化（Cold outreach → 跟进 → 面试邀请）
+### 模板B：KOL/自媒体 合作外联
+主题：OEWA猎头自动化平台 - 期待合作
 
-免费，开源，浏览器打开就能用：
-👉 https://samluo007.github.io/OEWA
+您好 [博主/自媒体名称]，
+我是Sam，做猎头SaaS方向的创业者。一直在关注您的[平台/内容方向]，您的受众画像和我们的目标用户高度重合——猎头、RPO、HR从业者。
+我们刚开源了OEWA：AI Agent工作流自动化平台，专为招聘流程设计，零代码，GitHub已上线（https://github.com/samluo007/OEWA）。
+想问问您是否有兴趣：1) 测评或演示这个工具 2) 合作出一期猎头效率工具方向的内容 3) 聊聊您粉丝最常问的招聘痛点
+不强制合作，纯交流也欢迎。Sam | OEWA | GitHub：https://github.com/samluo007/OEWA
 
-招募内测用户：猎头/RPO从业者、HR科技创业者
-有想法的评论区见！
-```
+### 模板C：VC/投资人 外联
+主题：解决招聘行业效率问题 - OEWA项目介绍
 
-**版本B — 成果展示型（效果更强）：**
-```
-上线一个招聘AI工具，给猎头朋友免费用
+您好 [投资人名字]，
+我是Sam，连续创业者，目前在做一个招聘流程自动化方向的项目OEWA，想看看是否有缘分交流。
+OEWA是一个AI Agent工作流自动化平台，专注猎头/RPO场景。用户用YAML配置工作流，零代码，AI自动执行招聘全流程。
+核心数据：MVP已上线（https://samluo007.github.io/OEWA）、开源6大行业模板、GitHub：https://github.com/samluo007/OEWA
+目标：招募760家猎头/RPO客户，3年实现1096万ARR。
+想找机会跟有招聘/HR Tech赛道经验的VC聊聊，听听您的判断。Sam | 手机：[你的手机] | GitHub：https://github.com/samluo007/OEWA
 
-做了个小工具，专门给猎头/RPO公司自动化招聘工作流。
+## 执行时间表（本周内）
 
-用工作流模板，把JD解析、候选人匹配、外联邮件、面试安排全部自动化。
+| 时间 | 动作 | 耗时 | 渠道 |
+|------|------|------|------|
+| 今天 | 发布脉脉（版本A） | 2分钟 | 脉脉 |
+| 今天 | GitHub Discussion发帖 | 2分钟 | github.com/OEWA/discussions |
+| 今天 | 提交Product Hunt | 10分钟 | producthunt.com |
+| 今天 | 录并发布Demo视频 | 20分钟 | 微信视频号/抖音/B站 |
+| 今天 | 发小红书一篇 | 10分钟 | 小红书 |
+| 周二09:00 | LinkedIn发帖（英文） | 5分钟 | LinkedIn |
+| 周三 | 联系10位候选人发邮件 | 30分钟 | 邮件 |
+| 本周 | 跟进脉脉评论+私信互动 | 每天10分钟 | 脉脉 |
 
-特点：零代码，开源免费，GitHub搜 OEWA 就能用。
+## 关键转化漏斗
 
-演示：https://samluo007.github.io/OEWA
+曝光（1000人）→ 兴趣（50人，点击GitHub链接）→ 访问（20人，试用线上演示）→ 尝试（3-5人，GitHub Star/Fork/提Issue）→ 转化（1-2人，付费/定制/合作咨询）
 
-如果你在为猎头公司或RPO业务找AI工具，欢迎试用，给点反馈！
-```
+关键转化点：评论区回复速度 → 越快回复，转化率越高（24小时内必须回复所有评论）
 
----
+## 核心口径
 
-## 四、Demo视频拍摄指南（10分钟搞定）
-
-### 工具准备（任选其一）
-- **推荐**：Windows Xbox Game Bar → Win+G → 录屏
-- **备选**：QQ录屏（Ctrl+Alt+S）
-- **手机**：直接拍手机屏幕也行，猎头圈对画质要求不高
-
-### 60秒分镜脚本
-
-**【0-5秒 开场钩子】**
-> 画面：纯黑底白字
-> "你知道猎头每天花多少时间在重复劳动上吗？"
-> （停顿1秒）
-
-**【5-20秒 痛点场景】**
-> 画面：演示手动筛简历 → 一个个打开 → 复制粘贴
-> "JD解析、简历匹配、外联邮件……这些都可以自动化。"
-> （语速稍快，画面快速切换几个手动操作的截图）
-
-**【20-50秒 工具演示】**
-> 画面：打开 https://samluo007.github.io/OEWA
-> "我来演示一下。先选'猎头-人才筛选'模板……"
-> "填入JD……点击运行……"
-> "看，工作流节点依次执行——JD解析、候选人匹配、外联邮件生成——全部自动跑完。"
-
-**【50-60秒 结尾引导】**
-> 画面：定格GitHub仓库页面
-> "GitHub搜OEWA就能免费用，源代码完全开源。"
-> "评论区告诉我，你们最想自动化哪个环节？"
-
-### 拍摄Tips
-- **横屏录制**（16:9），光线均匀，对着电脑说话即可
-- **不用背台词**，记住要点就行，说错重来（反正只有60秒）
-- **不用加字幕**，但可以后期用CapCut加（可选）
-- **文件命名**：`OEWA-Demo-[日期].mp4`
-
----
-
-## 五、冷外联邮件模板（猎头获客用）
-
-### 模板1：Cold Email 首次接触
-```
-主题：帮[公司名]压缩猎头[XX]%筛选时间？
-
-Hi [姓名],
-
-看到你们团队在[招聘平台/LinkedIn]发布的[职位名称]，注意到你们目前主要靠[现有方式]招聘[职位方向]。
-
-我是OEWA的作者——一个专注猎头/RPO场景的AI工作流自动化工具。
-
-我们能帮你把JD解析、候选人匹配、外联邮件这些重复环节自动化，
-实测帮猎头公司压缩[X]%的简历筛选时间。
-
-不影响现有工作流，在[职位]场景下可以直接试用：
-👉 https://samluo007.github.io/OEWA
-
-如果对你们有帮助，欢迎聊聊。
-不打扰的话，忽略这封邮件就好 😄
-
-Best,
-[你的名字]
-```
-
-### 模板2：跟进邮件（3天后发）
-```
-主题：Re: 帮[公司名]压缩猎头[XX]%筛选时间？
-
-Hi [姓名],
-
-上周给你发了封邮件关于OEWA，不知道有没有机会聊两句？
-
-如果现在不方便，完全理解。
-如果觉得有用，GitHub搜OEWA就能直接试。
-👉 https://samluo007.github.io/OEWA
-
-有反馈随时告诉我，对我很有价值。
-
-Best,
-[你的名字]
-```
-
-### 模板3：脉脉/LinkedIn InMail
-```
-Hi [姓名],
-
-注意到你在[公司]负责[职位/职能]，招聘压力应该不小？
-
-我做了个工具叫OEWA，专门帮猎头/RPO自动化招聘工作流——
-JD解析、候选人匹配、外联邮件、面试安排，全部零代码配置即用。
-
-有没有兴趣聊5分钟，看看对你们有没有用？
-不感兴趣的话忽略就好 🙌
-
-GitHub: https://github.com/samluo007/OEWA
-```
-
----
-
-## 六、执行时间表
-
-| 时间 | 动作 | 平台 | 预计效果 |
-|------|------|------|----------|
-| 今天 | 发Demo视频 | 微信视频号/B站/抖音 | 建立认知 |
-| 今天 | 发脉脉（版本A或B） | 脉脉 | 精准猎头/RPO圈 |
-| 周二09:00 | 发LinkedIn英文版 | LinkedIn | 国际猎头圈曝光 |
-| 周二09:00 | 发LinkedIn中文版 | LinkedIn | 国内猎头中文圈 |
-| 第3-7天 | 跟进所有评论/私信 | 全部 | 转化潜在用户 |
-
----
-
-## 七、核心话术包（对外口径统一）
-
-> **30秒介绍**：OEWA是一个专注猎头/RPO场景的AI工作流自动化平台，零代码，YAML配置，开源免费，GitHub搜OEWA就能用。
-
-> **60秒Pitch**：市面上的AI Agent平台都是给开发者用的。但猎头、RPO公司不需要写代码——他们只需要把JD丢进去，自动解析职位需求，匹配候选人，生成个性化外联邮件，安排面试。OEWA就是做这个的，零代码，配置即用，GitHub开源免费。
-
-> **一句话痛点**：猎头最费时间的不是找候选人——是把重复劳动自动化。
-
----
-
-## 八、转化漏斗设计
-
-```
-曝光（LinkedIn/脉脉/视频）
-    ↓
-点击链接 → https://samluo007.github.io/OEWA/
-    ↓
-试用Demo（猎头-人才筛选模板）
-    ↓
-评论区/私信互动 → 建立信任
-    ↓
-引导GitHub Star → 沉淀关系
-    ↓
-付费/定制/合作咨询
-```
-
-**关键转化点**：评论区回复速度 → 越快回复，转化率越高（24小时内必须回复所有评论）
+一句话：OEWA = AI Agent工作流自动化平台，专为猎头/RPO场景设计。零代码，开源免费。
+对比：传统招聘软件贵且难用，OEWA零代码、YAML配置、GitHub开源免费，无需采购。
+猎头痛点：「以前光发外联邮件就要3小时，OEWA帮你自动化。」
+GitHub：https://github.com/samluo007/OEWA | 线上演示：https://samluo007.github.io/OEWA
